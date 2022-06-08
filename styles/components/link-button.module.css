@@ -1,0 +1,63 @@
+/*버튼*/
+.linkButton {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.linkButton * {
+    z-index: 1;
+}
+
+/*버튼 호버 - 텍스트 강조*/
+.linkButton:hover {
+    font-weight: 700;
+}
+
+/*버튼 호버 배경 - 공통*/
+.linkButton.hoverSlider::before, .linkButton.hoverSlider::after {
+    z-index: 0;
+    content: "";
+    height: 100%;
+    position: absolute;
+    transition: 0.3s;
+    border-radius: inherit;
+}
+
+/*검정색 배경 - 호버하면 커짐*/
+.linkButton.hoverSlider::before {
+    width: 0;
+    left: 0;
+    background-color: #063f5c;
+}
+.linkButton.hoverSlider:hover::before {
+    width: 100%;
+    transition: 0.2s ease-out;
+}
+
+/*하얀색 배경 - 호버하면 작아짐*/
+.linkButton.hoverSlider::after {
+    width: 100%;
+    right: 0;
+    background-color: #fff;
+}
+
+.linkButton.hoverSlider:hover::after {
+    width: 0;
+    transition: 0.2s ease-out;
+}
+
+.linkButton.hoverSlider:hover {
+    color: white !important;
+}
+
+/*액티브 처리*/
+.linkButton:active {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}

@@ -1,29 +1,13 @@
-import {PropsWithChildren, useState} from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import Sidebar from "./sidebar";
-import styles from "../../styles/components/layout.module.css"
-import {LayoutContext} from "../../contexts/layout-context";
+import {Navbar} from "./navbar";
+import {Sidebar} from "./sidebar";
 
-const Layout = (props: PropsWithChildren<{}>) => {
-  const [isSidebarOpened, setIsSidebarOpened] = useState(false);
-
+const Layout = () => {
   return (
-    <div className={styles.pageContainer}>
-      <LayoutContext.Provider value={{isSidebarOpened, setIsSidebarOpened}}>
-        <Navbar></Navbar>
-        <div className={styles.articleContainer}>
-          <Sidebar></Sidebar>
-          <div className={styles.article}
-               style={{
-                 transition: "1s",
-                 filter: isSidebarOpened ? "blur(3px)" : "blur(0)"
-               }}>{props.children}</div>
-        </div>
-        {/*<Footer></Footer>*/}
-      </LayoutContext.Provider>
+    <div className="flex flex-col h-full">
+      <Navbar></Navbar>
+      <Sidebar></Sidebar>
     </div>
   );
 };
 
-export default Layout;
+export {Layout};

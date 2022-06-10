@@ -1,39 +1,17 @@
-import styles from "../../styles/components/navbar.module.css"
-import LinkButton from "../button/link-button";
-import {useContext} from "react";
-import {LayoutContext, LayoutProps} from "../../contexts/layout-context";
+import {NavbarItem} from "./navbar-item";
 
 const Navbar = () => {
-  const {isSidebarOpened, setIsSidebarOpened} = useContext<LayoutProps>(LayoutContext);
-  const onMenuButtonClick = () => {
-    setIsSidebarOpened(!isSidebarOpened);
-  };
-
   return (
-    <div>
-      <nav className={styles.navbar}>
-        <LinkButton href="/">
-          <span className="material-icons">change_history</span>
-          <h1>Neko Wiki</h1>
-        </LinkButton>
-        <div className={styles.spacing}></div>
-        <div>
-          <LinkButton><span>Sign In</span></LinkButton>
-          <LinkButton><span>Sign Up</span></LinkButton>
-        </div>
-      </nav>
+    <div className="flex p-6 bg-gray-800">
+      <h1 className="text-4xl mr-6 text-white">NekoWiki</h1>
 
-      <nav className={styles.navbar}>
-        <LinkButton onClick={onMenuButtonClick}>
-          <span className="material-icons">menu</span>
-        </LinkButton>
-        <div className={styles.spacing}></div>
-        <LinkButton>
-          <span className="material-icons">search</span>
-        </LinkButton>
-      </nav>
+      <NavbarItem>Random Neko</NavbarItem>
+
+      <div className="flex-1"></div>
+      <NavbarItem>Sign In</NavbarItem>
+      <NavbarItem>Sign Up</NavbarItem>
     </div>
   );
-};
+}
 
-export default Navbar;
+export {Navbar};

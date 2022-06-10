@@ -1,9 +1,0 @@
-/*outer container : article*/
-.pageContainer {
-    margin-top: 16px;
-    position: relative;
-    display: flex;
-    margin-left: 32px;
-    flex-direction: column;
-    /*justify-content: center;*/
-}

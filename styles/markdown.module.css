@@ -1,0 +1,259 @@
+.articleMarkDown {
+}
+
+.articleMarkDown a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+.articleMarkDown a:visited {
+  color: #0b0080;
+}
+
+.articleMarkDown a:hover {
+  color: #06e;
+}
+
+.articleMarkDown a:active {
+  color: #faa700;
+}
+
+.articleMarkDown a:focus {
+  outline: thin dotted;
+}
+
+.articleMarkDown ::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #fff
+}
+
+.articleMarkDown ::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #fff
+}
+
+.articleMarkDown a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad
+}
+
+.articleMarkDown a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad
+}
+
+.articleMarkDown p {
+  margin: 1em 0;
+}
+
+.articleMarkDown img {
+  max-width: 100%;
+}
+
+.articleMarkDown h1,
+.articleMarkDown h2,
+.articleMarkDown h3,
+.articleMarkDown h4,
+.articleMarkDown h5,
+.articleMarkDown h6 {
+  color: #fff;
+  line-height: 1.3em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.articleMarkDown h1::before,
+.articleMarkDown h2::before,
+.articleMarkDown h3::before,
+.articleMarkDown h4::before,
+.articleMarkDown h5::before,
+.articleMarkDown h6::before {
+  display: inline-block;
+  height: 1em;
+  padding-right: 0.3em;
+  color: #EC9F19;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.articleMarkDown h1:hover::before,
+.articleMarkDown h2:hover::before,
+.articleMarkDown h3:hover::before,
+.articleMarkDown h4:hover::before,
+.articleMarkDown h5:hover::before,
+.articleMarkDown h6:hover::before {
+  opacity: 1;
+}
+
+.articleMarkDown h1::before {
+  content: "#"
+}
+
+.articleMarkDown h2::before {
+  content: "##"
+}
+
+.articleMarkDown h3::before {
+  content: "###"
+}
+
+.articleMarkDown h5::before {
+  content: "####"
+}
+
+.articleMarkDown h4::before {
+  content: "#####"
+}
+
+.articleMarkDown h6::before {
+  content: "######"
+}
+
+.articleMarkDown h4,
+.articleMarkDown h5,
+.articleMarkDown h6 {
+  font-weight: bold;
+}
+
+.articleMarkDown h1 {
+  font-size: 2.5em;
+}
+
+.articleMarkDown h2 {
+  font-size: 2em;
+}
+
+.articleMarkDown h3 {
+  font-size: 1.5em;
+}
+
+.articleMarkDown h4 {
+  font-size: 1.2em;
+}
+
+.articleMarkDown h5 {
+  font-size: 1em;
+}
+
+.articleMarkDown h6 {
+  font-size: 0.9em;
+}
+
+.articleMarkDown blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+
+.articleMarkDown hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.articleMarkDown pre,
+.articleMarkDown code,
+.articleMarkDown kbd,
+.articleMarkDown samp {
+  color: #fff;
+  font-family: monospace, monospace;
+  _font-family: 'courier new', monospace;
+  font-size: 0.98em;
+}
+
+.articleMarkDown pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.articleMarkDown b,
+.articleMarkDown strong {
+  font-weight: bold;
+}
+
+.articleMarkDown dfn {
+  font-style: italic;
+}
+
+.articleMarkDown ins {
+  background: #ff9;
+  color: #fff;
+  text-decoration: none;
+}
+
+.articleMarkDown mark {
+  background: #ff0;
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.articleMarkDown sub,
+.articleMarkDown sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.articleMarkDown sup {
+  top: -0.5em;
+}
+
+.articleMarkDown sub {
+  bottom: -0.25em;
+}
+
+.articleMarkDown ul,
+.articleMarkDown ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+  list-style: inherit;
+}
+
+.articleMarkDown li p:last-child {
+  margin: 0
+}
+
+.articleMarkDown dd {
+  margin: 0 0 0 2em;
+}
+
+.articleMarkDown img {
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  border-radius: 8px;
+  border: 16px solid #3f3f3f;
+}
+
+.articleMarkDown table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.articleMarkDown th {
+  border-bottom: 1px solid black;
+}
+
+.articleMarkDown td {
+  vertical-align: top;
+}
+
+@media only screen and (min-width: 480px) {
+  .articleMarkDown body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .articleMarkDown body {
+    font-size: 16px;
+  }
+}

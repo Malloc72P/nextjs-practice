@@ -1,8 +1,11 @@
 import {PropsWithChildren} from "react";
 
-const NavbarItem = (props:PropsWithChildren) => {
+const NavbarItem = (props: PropsWithChildren) => {
   return (
-    <div className="transition-[0.2s] cursor-pointer px-3 flex items-center text-white hover:font-bold">
+    <div className="flex items-center px-3
+                    text-white opacity-70
+                    hover:bg-zinc-700 hover:font-bold hover:opacity-100
+                    transition-[0.2s] cursor-pointer">
       {props.children}
     </div>
   );

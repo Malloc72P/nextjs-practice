@@ -34,8 +34,9 @@ const cats: Cat[] = [
 const Sidebar = (props: PropsWithChildren) => {
   return (
     <div className="min-w-[240px] h-full bg-zinc-900">
-      <div className="flex items-center h-16 flex-shrink-0 px-4 mb-5 text-white text-2xl">
-        <MenuAlt1Icon className="inline w-6 h-6 mr-4 cursor-pointer"/>
+      <div className="flex items-center flex-shrink-0 px-4 mb-5 h-16
+                      text-white text-2xl">
+        <MenuAlt1Icon className="inline w-6 h-6 mr-4 cursor-pointer hover:bg-zinc-700"/>
         <span>Nekos</span>
       </div>
       {

@@ -40,7 +40,8 @@ const Sidebar = (props: PropsWithChildren) => {
         <span>Nekos</span>
       </div>
       {
-        cats.map(cat => (<SidebarItem>{cat.name}</SidebarItem>))
+        cats.map((cat, index) =>
+          (<SidebarItem key={index}>{cat.name}</SidebarItem>))
       }
     </div>
   );

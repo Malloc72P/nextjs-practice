@@ -1,6 +1,6 @@
 import {PropsWithChildren} from "react";
 
-const NavbarItem = (props: PropsWithChildren) => {
+function NavbarItem(props: PropsWithChildren) {
   return (
     <div className="flex items-center px-3
                     text-white opacity-70
@@ -9,6 +9,6 @@ const NavbarItem = (props: PropsWithChildren) => {
       {props.children}
     </div>
   );
-};
+}
 
 export {NavbarItem};

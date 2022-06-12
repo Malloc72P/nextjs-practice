@@ -7,7 +7,7 @@ interface ArticleContent {
   content: string;
 }
 
-const Article = (props: ArticleContent) => {
+function Article(props: ArticleContent) {
   // 마크다운 컨텐츠
   const [markdownContent, setMarkdownContent] = useState("Now Loading");
   useEffect(() => {
@@ -22,6 +22,6 @@ const Article = (props: ArticleContent) => {
       {Parser(markdownContent)}
     </div>
   );
-};
+}
 
 export {Article};

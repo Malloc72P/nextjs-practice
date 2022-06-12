@@ -1,8 +1,4 @@
-import type {GetServerSideProps, InferGetServerSidePropsType, NextPage} from 'next'
-import {Layout} from "../components/layout/layout";
-import {createPrisma} from "../lib/prisma-helper";
-import {Prisma} from "@prisma/client";
-import {PropsWithChildren} from "react";
+import {PrismaClient} from '@prisma/client'
 
 const testData = `
 # 노르웨이 숲
@@ -32,43 +28,12 @@ const testData = `
 
 `;
 
-async function create() {
-  return await createPrisma()
-    .catDocument
-    .create({
-      data: {
-        createdAt: new Date(),
-        catName: "노르웨이 숲",
-        content: testData
-      }
-    });
-}
-
-async function findById() {
-  return await createPrisma()
-    .catDocument
-    .findUnique({
-      where: {id: "62a5544b86846603a0b97814"}
-    });
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  // const feed = await create();
-  const feed = await findById();
-  const reParsedFeed = JSON.parse(JSON.stringify(feed));
-  return {
-    props: {reParsedFeed}
-  };
+const createPrisma = () => {
+  return new PrismaClient();
 };
 
-interface HomeProps {
-  catDocument: Prisma.CatDocumentSelect;
-}
+const closePrisma = (prisma: PrismaClient) => {
+  prisma.$disconnect();
+};
 
-const Home: NextPage = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  return (
-    <Layout content={props.reParsedFeed.content}></Layout>
-  )
-}
-
-export default Home
+export {createPrisma, closePrisma};

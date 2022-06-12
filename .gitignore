@@ -1,6 +1,7 @@
 # data
 /data
-/.docker/**/data
+/.docker/**/data/
+#/.docker/malloc72p/data/
 
 # Created by https://www.toptal.com/developers/gitignore/api/webstorm+all,visualstudiocode,node,windows,macos,nextjs,react
 # Edit at https://www.toptal.com/developers/gitignore?templates=webstorm+all,visualstudiocode,node,windows,macos,nextjs,react
@@ -334,4 +335,3 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/webstorm+all,visualstudiocode,node,windows,macos,nextjs,react

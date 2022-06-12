@@ -2,7 +2,6 @@ import type {GetServerSideProps, InferGetServerSidePropsType, NextPage} from 'ne
 import {Layout} from "../components/layout/layout";
 import {createPrisma} from "../lib/prisma-helper";
 import {Prisma} from "@prisma/client";
-import {PropsWithChildren} from "react";
 
 const testData = `
 # 노르웨이 숲
@@ -52,10 +51,21 @@ async function findById() {
     });
 }
 
+async function findAll() {
+  return await createPrisma()
+    .catDocument
+    .findMany();
+}
+
+
 export const getServerSideProps: GetServerSideProps = async () => {
-  // const feed = await create();
-  const feed = await findById();
-  const reParsedFeed = JSON.parse(JSON.stringify(feed));
+  // const feeds = await create();
+  let feeds = await findAll();
+  if (feeds.length === 0) {
+    await create();
+    feeds = await findAll();
+  }
+  const reParsedFeed = JSON.parse(JSON.stringify(feeds[0]));
   return {
     props: {reParsedFeed}
   };

@@ -1,25 +1,10 @@
-import {useEffect, useState} from "react";
-import {markdownToHtml} from "../../lib/markdown-to-html";
-import Parser from 'html-react-parser';
+import {PropsWithChildren} from "react";
 import styles from "../../styles/markdown.module.css";
 
-interface ArticleContent {
-  content: string;
-}
-
-function Article(props: ArticleContent) {
-  // 마크다운 컨텐츠
-  const [markdownContent, setMarkdownContent] = useState("Now Loading");
-  useEffect(() => {
-    markdownToHtml(props.content)
-      .then((convertedMarkdownContent) => {
-        setMarkdownContent(convertedMarkdownContent);
-      });
-  }, []);
-
+function Article(props: PropsWithChildren) {
   return (
-    <div className={styles.articleMarkDown + " bg-zinc-800 text-white w-full p-6"}>
-      {Parser(markdownContent)}
+    <div className={"bg-zinc-800 text-white w-full p-6 overflow-auto " + styles.articleMarkDown}>
+      {props.children}
     </div>
   );
 }

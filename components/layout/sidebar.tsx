@@ -1,6 +1,5 @@
-import {SidebarItem} from "./sidebar-item";
+import {SidebarItem, SidebarItemProps} from "./sidebar-item";
 import {MenuAlt1Icon} from "@heroicons/react/solid";
-import {PropsWithChildren} from "react";
 
 interface Cat {
   name: string;
@@ -31,7 +30,11 @@ const cats: Cat[] = [
   }
 ];
 
-const Sidebar = (props: PropsWithChildren) => {
+interface SidebarProps {
+  sidebarItemProps: SidebarItemProps[];
+}
+
+const Sidebar = (props: SidebarProps) => {
   return (
     <div className="min-w-[240px] h-full bg-zinc-900">
       <div className="flex items-center flex-shrink-0 px-4 mb-5 h-16
@@ -40,8 +43,8 @@ const Sidebar = (props: PropsWithChildren) => {
         <span>Nekos</span>
       </div>
       {
-        cats.map((cat, index) =>
-          (<SidebarItem key={index}>{cat.name}</SidebarItem>))
+        props.sidebarItemProps.map((sidebarItemProp, index) =>
+          (<SidebarItem key={index} title={sidebarItemProp.title}></SidebarItem>))
       }
     </div>
   );

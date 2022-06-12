@@ -8,8 +8,9 @@ const Navbar = () => {
       <h1 className="text-4xl mr-6 text-white">NekoWiki</h1>
 
       <div className="flex-1"></div>
-      <NavbarItem>Sign In</NavbarItem>
-      <NavbarItem>Sign Up</NavbarItem>
+      <NavbarItem>create</NavbarItem>
+      <NavbarItem>edit</NavbarItem>
+      <NavbarItem>delete</NavbarItem>
     </div>
   );
 }

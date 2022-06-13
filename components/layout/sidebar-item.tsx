@@ -8,9 +8,7 @@ export interface SidebarItemProps {
 const SidebarItem = (props: SidebarItemProps) => {
   const router = useRouter();
   const onClickHandler = () => {
-    router.replace(`/`).then(() => {
-      router.push(`/cats/${props.title}`)
-    });
+    router.push(`/cats/${props.title}`)
   }
 
   return (

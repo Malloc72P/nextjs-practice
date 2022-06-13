@@ -7,6 +7,7 @@ import {findAll} from "../../lib/neko-document-service";
 import Parser from "html-react-parser";
 import {markdownToHtml} from "../../lib/markdown-to-html";
 import {GetStaticPropsContext} from "next/types";
+import MarkdownContent from "../../components/layout/markdown-content";
 
 type PostProps = {
   catDocuments: CatDocument[];
@@ -55,18 +56,9 @@ export async function getStaticProps({params}: GetStaticPropsContext) {
 }
 
 const Post = (props: PostProps) => {
-  const [markdownContent, setMarkdownContent] = useState<string>("...loading");
-  useEffect(() => {
-    markdownToHtml(props.currentDocument.content)
-      .then((conversionResult) => {
-        setMarkdownContent(conversionResult);
-      });
-
-  }, []);
-
   return (
     <Layout catDocuments={props.catDocuments}>
-      {Parser(markdownContent)}
+      <MarkdownContent markdownString={props.currentDocument.content}></MarkdownContent>
     </Layout>
   );
 };

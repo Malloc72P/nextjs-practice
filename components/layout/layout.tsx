@@ -6,22 +6,12 @@ import {CatDocument} from "../../lib/cat-document";
 import {PropsWithChildren} from "react";
 import {SidebarItemProps} from "./sidebar-item";
 
-interface LayoutProps extends PropsWithChildren {
-  catDocuments: CatDocument[]
-}
-
-const Layout = (props: LayoutProps) => {
-  const sidebarItemPropsList:SidebarItemProps[] = props.catDocuments.map(catDocument => {
-    return {
-      title: catDocument.catName
-    };
-  });
-
+const Layout = (props: PropsWithChildren) => {
   return (
     <div className="flex flex-col h-full">
       <Navbar></Navbar>
       <div className="flex flex-grow">
-        <Sidebar sidebarItemProps={sidebarItemPropsList}></Sidebar>
+        <Sidebar></Sidebar>
         <Article>{props.children}</Article>
       </div>
 

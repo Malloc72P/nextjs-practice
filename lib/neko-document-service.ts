@@ -21,10 +21,19 @@ async function findById(catDocumentId: string) {
     });
 }
 
+async function findByCatName(catName: string) {
+  return await createPrisma()
+    .catDocument
+    .findUnique({
+      where: {catName: catName}
+    });
+}
+
+
 async function findAll(): Promise<CatDocument[]> {
   return await createPrisma()
     .catDocument
     .findMany();
 }
 
-export {create, findById, findAll};
+export {create, findById, findByCatName, findAll};

@@ -9,8 +9,6 @@ export interface MarkdownContentProps {
 }
 
 const MarkdownContent = (props: MarkdownContentProps) => {
-  const router = useRouter();
-  const currentCat = router.query?.catName;
   const [markdownContent, setMarkdownContent] = useState<string>("...loading");
   useEffect(() => {
     markdownToHtml(props.markdownString)
@@ -18,7 +16,7 @@ const MarkdownContent = (props: MarkdownContentProps) => {
         setMarkdownContent(conversionResult);
       });
 
-  }, [currentCat]);
+  }, [props.markdownString]);
 
   return (
     <div className={styles.articleMarkDown}>

@@ -1,4 +1,4 @@
-import {SidebarItem, SidebarItemProps} from "./sidebar-item";
+import {SidebarItem} from "./sidebar-item";
 import {MenuAlt1Icon} from "@heroicons/react/solid";
 import {useEffect, useState} from "react";
 import axios from "axios";

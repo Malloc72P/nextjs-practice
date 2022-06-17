@@ -6,6 +6,8 @@ import {useRouter} from "next/router";
 
 export interface MarkdownContentProps {
   markdownString: string;
+  additionalClass?: string;
+  height?: string;
 }
 
 const MarkdownContent = (props: MarkdownContentProps) => {
@@ -19,7 +21,7 @@ const MarkdownContent = (props: MarkdownContentProps) => {
   }, [props.markdownString]);
 
   return (
-    <div className={styles.articleMarkDown}>
+    <div className={styles.articleMarkDown + " " + props.additionalClass} style={{height: props.height}}>
       {Parser(markdownContent)}
     </div>
   );

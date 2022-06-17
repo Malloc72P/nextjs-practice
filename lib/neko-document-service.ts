@@ -1,13 +1,13 @@
 import {createPrisma} from "./prisma-helper";
 import {CatDocument} from "./cat-document";
 
-async function create(content: string) {
+async function create(catName: string, content: string) {
   return await createPrisma()
     .catDocument
     .create({
       data: {
         createdAt: new Date(),
-        catName: "노르웨이 숲",
+        catName: catName,
         content: content
       }
     });

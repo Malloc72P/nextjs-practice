@@ -8,7 +8,7 @@ const Navbar = () => {
       <h1 className="text-4xl mr-6 text-white">NekoWiki</h1>
 
       <div className="flex-1"></div>
-      <NavbarItem>create</NavbarItem>
+      <NavbarItem url={"/cats/create"}>create</NavbarItem>
       <NavbarItem>edit</NavbarItem>
       <NavbarItem>delete</NavbarItem>
     </div>

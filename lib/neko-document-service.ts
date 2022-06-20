@@ -36,4 +36,13 @@ async function findAll(): Promise<CatDocument[]> {
     .findMany();
 }
 
-export {create, findById, findByCatName, findAll};
+async function update(catDocument: CatDocument, newContent: string) {
+  return await createPrisma()
+    .catDocument
+    .update({
+      where: {id: catDocument.id},
+      data: {content: newContent}
+    });
+}
+
+export {create, update, findById, findByCatName, findAll};

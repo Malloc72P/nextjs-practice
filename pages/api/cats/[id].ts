@@ -1,6 +1,6 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import {CatDocument} from "../../../lib/cat-document";
-import {findByCatName} from "../../../lib/neko-document-service";
+import {findByCatName, update} from "../../../lib/neko-document-service";
 
 const handler = async (request: NextApiRequest, response: NextApiResponse<CatDocument>) => {
   const method = request.method;
@@ -15,6 +15,9 @@ const handler = async (request: NextApiRequest, response: NextApiResponse<CatDoc
     case "GET" :
       await onGet(id, response);
       break;
+    case "PUT" :
+      await onPUT(id, request.body.content, response);
+      break
     default:
       response405(response);
       break;
@@ -49,5 +52,17 @@ async function onGet(id: string, response: NextApiResponse) {
 
   response.status(200).json(findCatDocument);
 }
+
+async function onPUT(id: string, content: string, response: NextApiResponse) {
+  const findCatDocument = await findByCatName(id);
+
+  if (!findCatDocument) {
+    response404(response);
+    return;
+  }
+  await update(findCatDocument, content);
+  response.status(200).json(findCatDocument);
+}
+
 
 export default handler;

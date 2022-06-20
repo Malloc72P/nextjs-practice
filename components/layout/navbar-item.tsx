@@ -3,11 +3,16 @@ import {useRouter} from "next/router";
 
 interface NavbarItemProps extends PropsWithChildren {
   url?: string;
+  callback?: () => void;
 }
 
 function NavbarItem(props: NavbarItemProps) {
   const router = useRouter();
   const onclick = () => {
+    if (props.callback) {
+      props.callback();
+      return;
+    }
     if (props.url) {
       router.push(props.url);
     }

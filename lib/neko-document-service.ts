@@ -45,4 +45,13 @@ async function update(catDocument: CatDocument, newContent: string) {
     });
 }
 
-export {create, update, findById, findByCatName, findAll};
+async function deleteDocument(catDocument: CatDocument) {
+  return await createPrisma()
+    .catDocument
+    .delete({
+      where: {id: catDocument.id}
+    });
+}
+
+
+export {create, update, deleteDocument, findById, findByCatName, findAll};
